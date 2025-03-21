@@ -1,0 +1,28 @@
+name: Fine-Tune BERT and Upload to Hugging Face
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  train-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: |
+          pip install transformers datasets torch scikit-learn accelerate huggingface_hub
+
+      - name: Train Model & Upload
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python train.py
