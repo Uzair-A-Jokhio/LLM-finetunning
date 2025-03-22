@@ -20,7 +20,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          Make install
+          make install
 
       - name: Train Model & Upload
         env:
