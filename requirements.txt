@@ -1,0 +1,7 @@
+pandas
+transformers
+scikit-learn
+datasets
+torch
+torchvision 
+torchaudio
