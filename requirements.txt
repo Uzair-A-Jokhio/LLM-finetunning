@@ -5,3 +5,5 @@ datasets
 torch
 torchvision 
 torchaudio
+pylint
+nltk
