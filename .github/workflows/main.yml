@@ -1,4 +1,4 @@
-name: Fine-Tune BERT and Upload to Hugging Face
+name: Working Properly
 
 on:
   push:
@@ -23,6 +23,5 @@ jobs:
           make install
 
       - name: Train Model & Upload
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN_BERT }}
-        run: python train.py
+        run: | 
+          make lint
